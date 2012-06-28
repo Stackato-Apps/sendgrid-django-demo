@@ -1,0 +1,22 @@
+name: sgdj
+
+env:
+  DJANGO_SETTINGS_MODULE: settings
+
+requirements:
+  pypm:
+    - psycopg2
+    - django
+    - south
+
+services:
+  postgresql-sgdj: postgresql
+
+hooks:
+  post-staging:
+    - python manage.py syncdb --noinput
+    - python manage.py migrate
+
+ignores: 
+  - .git
+  - dev.db
