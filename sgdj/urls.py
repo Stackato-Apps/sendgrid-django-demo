@@ -1,10 +1,14 @@
 from django.conf.urls import patterns, include, url
+from django.shortcuts import redirect
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^sg/$', 'sg.views.index'),
+    url(r'^$', lambda request: redirect('/sg')),
+
     # Examples:
     # url(r'^$', 'sgdj.views.home', name='home'),
     # url(r'^sgdj/', include('sgdj.foo.urls')),
