@@ -3,11 +3,17 @@ name: sgdj
 env:
   DJANGO_SETTINGS_MODULE: settings
 
+framework:
+  type: python
+
 requirements:
   pypm:
     - psycopg2
     - django
     - south
+
+processes:
+  web: $STACKATO_UWSGI
 
 services:
   postgresql-sgdj: postgresql
