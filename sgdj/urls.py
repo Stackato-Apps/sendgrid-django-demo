@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 
 urlpatterns = patterns('',
     (r'^sg/$', 'sg.views.index'),
+    (r'^sg/send$', 'sg.views.send'),
     url(r'^$', lambda request: redirect('/sg')),
 
     # Examples:

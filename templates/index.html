@@ -1,2 +1,30 @@
+<html>
+  <head>
+    <title>Send Email</title>
+  </head>
+<body>
+  <h2>Send Email</h2>
 
-<h2>hewo wowold!</h2>
+  <fieldset>
+    <legend>foo</legend>
+    <form action="/sg/send" method="post">
+      {% csrf_token %}
+      <label for="un">Sendgrid Username</label>
+      <input id="un" name="un" type="text" />
+      <label for="pw">Sendgrid Password</label>
+      <input id="pw" name="pw" type="text" />
+      <label for="from">From Address</label>
+      <input id="from" name="from" type="text" />
+      <label for="to">To Address</label>
+      <input id="to" name="to" type="text" />
+      <label for="subj">Subject</label>
+      <input id="subj" name="subj" type="text" />
+
+      <label for="body">Body</label>
+      <textarea id="body" name="body"></textarea>
+
+      <input type="submit" value="Send Email" />
+    </form>
+  </fieldset>
+<body>
+</html>
