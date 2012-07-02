@@ -23,8 +23,7 @@ def send(request):
   subj = request.POST['subj']
   body = request.POST['body']
 
-
-  connection=get_connection()
+  connection = get_connection(username=un, password=pw);
   connection.open()
 
   email = EmailMessage(subj, body, from_addr,
@@ -35,8 +34,8 @@ def send(request):
   email.send()
 
   return render_to_response('send.html', {
-    'from': request.POST['from'],
-    'to': request.POST['to'],
-    'subj': request.POST['subj'],
-    'body': request.POST['body'],
+    'from': from_addr,
+    'to': to_addr,
+    'subj': subj,
+    'body': body,
     })
