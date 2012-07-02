@@ -13,13 +13,13 @@
     <legend>Fields</legend>
     <form action="/sg/send" method="post">
       {% csrf_token %}
-      <label for="un">Sendgrid Username</label>
+      <label for="username">Sendgrid Username</label>
       <br>
-      <input id="un" name="un" type="text" />
+      <input id="username" name="username" type="text" />
       <br>
-      <label for="pw">Sendgrid Password</label>
+      <label for="password">Sendgrid Password</label>
       <br>
-      <input id="pw" name="pw" type="password" />
+      <input id="password" name="password" type="password" />
       <br>
       <label for="from">From Address</label>
       <br>

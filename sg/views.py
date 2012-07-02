@@ -16,19 +16,21 @@ def index(request):
 
 @require_POST
 def send(request):
-  un = request.POST['un']
-  pw = request.POST['pw']
+  username  = request.POST['username']
+  password  = request.POST['password']
   from_addr = request.POST['from']
-  to_addr = request.POST['to']
-  subj = request.POST['subj']
-  body = request.POST['body']
+  to_addr   = request.POST['to']
+  subj      = request.POST['subj']
+  body      = request.POST['body']
 
-  connection = get_connection(username=un, password=pw);
+  connection = get_connection(username=username, password=password);
   connection.open()
 
   email = EmailMessage(subj, body, from_addr,
-              [to_addr], [],
-              headers = {'Reply-To': from_addr}, connection=connection)
+      [to_addr], 
+      [], # bcc addresses
+      headers = {'Reply-To': from_addr}, # add email headers as a dictionary
+      connection=connection)
   email.attach_file(os.path.join(settings.ROOT, 'SendGrid_Deliverability_Guide.pdf'),
       'application/pdf')
   email.send()
