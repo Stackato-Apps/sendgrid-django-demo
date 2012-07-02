@@ -1,28 +1,43 @@
 <html>
   <head>
     <title>Send Email</title>
+    <style type="text/css">
+      label { font-weight:bold; }
+
+    </style>
   </head>
 <body>
-  <h2>Send Email</h2>
+  <h2>Send Email Deliverability Guide</h2>
 
   <fieldset>
-    <legend>foo</legend>
+    <legend>Fields</legend>
     <form action="/sg/send" method="post">
       {% csrf_token %}
       <label for="un">Sendgrid Username</label>
+      <br>
       <input id="un" name="un" type="text" />
+      <br>
       <label for="pw">Sendgrid Password</label>
+      <br>
       <input id="pw" name="pw" type="password" />
+      <br>
       <label for="from">From Address</label>
+      <br>
       <input id="from" name="from" type="text" />
+      <br>
       <label for="to">To Address</label>
+      <br>
       <input id="to" name="to" type="text" />
+      <br>
       <label for="subj">Subject</label>
+      <br>
       <input id="subj" name="subj" type="text" />
-
+      <br>
       <label for="body">Body</label>
+      <br>
       <textarea id="body" name="body"></textarea>
 
+      <br>
       <input type="submit" value="Send Email" />
     </form>
   </fieldset>
