@@ -16,14 +16,12 @@ def index(request):
 
 @require_POST
 def send(request):
-  un = request.POST['un']
-  pw = request.POST['pw']
   from_addr = request.POST['from']
   to_addr = request.POST['to']
   subj = request.POST['subj']
   body = request.POST['body']
 
-  connection = get_connection(username=un, password=pw);
+  connection = get_connection();
   connection.open()
 
   email = EmailMessage(subj, body, from_addr,
