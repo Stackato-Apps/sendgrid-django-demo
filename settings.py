@@ -12,6 +12,15 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+
+# Sendgrid settings
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+
+
 MANAGERS = ADMINS
 
 DATABASES = {
