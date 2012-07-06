@@ -1,45 +1,24 @@
-<html>
-  <head>
-    <title>Send Email</title>
-    <style type="text/css">
-      label { font-weight:bold; }
-
-    </style>
-  </head>
-<body>
+{% extends "base.html" %}
+{% block title %}Send Email{% endblock %}
+{% block content %}
   <h2>Send Email Deliverability Guide</h2>
 
-  <fieldset>
-    <legend>Fields</legend>
-    <form action="/sg/send" method="post">
-      {% csrf_token %}
-      <label for="username">Sendgrid Username</label>
-      <br>
-      <input id="username" name="username" type="text" />
-      <br>
-      <label for="password">Sendgrid Password</label>
-      <br>
-      <input id="password" name="password" type="password" />
-      <br>
-      <label for="from">From Address</label>
-      <br>
-      <input id="from" name="from" type="text" />
-      <br>
-      <label for="to">To Address</label>
-      <br>
-      <input id="to" name="to" type="text" />
-      <br>
-      <label for="subj">Subject</label>
-      <br>
-      <input id="subj" name="subj" type="text" />
-      <br>
-      <label for="body">Body</label>
-      <br>
-      <textarea id="body" name="body"></textarea>
+  <form action="/sg/send" method="post" class="well">
+    {% csrf_token %}
+    <label for="username">Sendgrid Username</label>
+    <input id="username" name="username" type="text" class="span3" />
+    <label for="password">Sendgrid Password</label>
+    <input id="password" name="password" type="password" class="span3" />
+    <label for="from">From Address</label>
+    <input id="from" name="from" type="text" class="span3" />
+    <label for="to">To Address</label>
+    <input id="to" name="to" type="text" class="span3" />
+    <label for="subj">Subject</label>
+    <input id="subj" name="subj" type="text" class="span3" />
+    <label for="body">Body</label>
+    <textarea id="body" name="body" class="span3"></textarea>
+    <br>
+    <input type="submit" value="Send Email" class="btn" />
+  </form>
 
-      <br>
-      <input type="submit" value="Send Email" />
-    </form>
-  </fieldset>
-<body>
-</html>
+{% endblock %}
