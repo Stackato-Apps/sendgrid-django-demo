@@ -3,22 +3,69 @@
 {% block content %}
   <h2>Send Email Deliverability Guide</h2>
 
-  <form action="/sg/send" method="post" class="well">
+  <form action="/sg/send" method="post" class="well form-horizontal">
+    <fieldset>
     {% csrf_token %}
-    <label for="username">Sendgrid Username</label>
-    <input id="username" name="username" type="text" class="span3" />
-    <label for="password">Sendgrid Password</label>
-    <input id="password" name="password" type="password" class="span3" />
-    <label for="from">From Address</label>
-    <input id="from" name="from" type="text" class="span3" />
-    <label for="to">To Address</label>
-    <input id="to" name="to" type="text" class="span3" />
-    <label for="subj">Subject</label>
-    <input id="subj" name="subj" type="text" class="span3" />
-    <label for="body">Body</label>
-    <textarea id="body" name="body" class="span3"></textarea>
-    <br>
-    <input type="submit" value="Send Email" class="btn" />
+    <div class="control-group">
+      <label for="username" class="control-label">Sendgrid Username</label>
+      <div class="controls">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-user"></i></span><input id="username" name="username" type="text" class="span3" />
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="password" class="control-label">Sendgrid Password</label>
+      <div class="controls">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-eye-close"></i></span><input id="password" name="password" type="password" class="span3" />
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="from" class="control-label">From Address</label>
+      <div class="controls">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-envelope"></i></span><input id="from" name="from" type="text" class="span3" />
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="to" class="control-label">To Address</label>
+      <div class="controls">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-envelope"></i></span><input id="to" name="to" type="text" class="span3" />
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="subj" class="control-label">Subject</label>
+      <div class="controls">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-pencil"></i></span><input id="subj" name="subj" type="text" class="span3" />
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="body" class="control-label">Body</label>
+      <div class="controls">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-comment"></i></span><textarea id="body" name="body" class="span3" rows="6"></textarea>
+        </div>
+        
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">
+        <i class="icon-ok icon-white"></i>
+        Send Email
+      </button>
+      <button type="reset" class="btn">
+        <i class="icon-remove"></i>
+        Reset
+      </button>
+    </div>
+  </fieldset>
   </form>
 
 {% endblock %}
