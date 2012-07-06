@@ -16,12 +16,12 @@ def index(request):
 
 @require_POST
 def send(request):
-  username  = request.POST['username']
-  password  = request.POST['password']
-  from_addr = request.POST['from']
-  to_addr   = request.POST['to']
-  subj      = request.POST['subj']
-  body      = request.POST['body']
+  username  = request.POST.get('username')
+  password  = request.POST.get('password')
+  from_addr = request.POST.get('from')
+  to_addr   = request.POST.get('to')
+  subj      = request.POST.get('subj')
+  body      = request.POST.get('body')
 
   connection = get_connection(username=username, password=password);
   connection.open()
@@ -40,4 +40,4 @@ def send(request):
     'to': to_addr,
     'subj': subj,
     'body': body,
-    })
+    }, context_instance=RequestContext(request))

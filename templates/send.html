@@ -2,13 +2,15 @@
 {% block title %}Email Sent{% endblock %}
 {% block content %}
   <h2>Email has been sent!</h2>
-  <br>
-  <strong>From: </strong>{{ from }}
-  <br>
-  <strong>To: </strong>{{ to }}
-  <br>
-  {{ subj }}
-  <br>
-  {{ body }}
-  <br>
+  <div class="well">
+    <h3>The following email has been sent, with a Sendgrid Deliverability Guide attached:</h3>
+    <br>
+    <strong>From: </strong>{{ from }}
+    <br>
+    <strong>To: </strong>{{ to }}
+    <br>
+    {{ subj }}
+    <br>
+    {{ body }}
+  </div>
 {% endblock %}
