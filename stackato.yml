@@ -1,4 +1,4 @@
-name: sgdj
+name: sendgrid
 
 env:
   DJANGO_SETTINGS_MODULE: settings
@@ -16,7 +16,7 @@ processes:
   web: $STACKATO_UWSGI
 
 services:
-  postgresql-sgdj: postgresql
+  postgresql-sg: postgresql
 
 hooks:
   post-staging:

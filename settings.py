@@ -1,4 +1,4 @@
-# Django settings for sgdj project.
+# Django settings for sg project.
 import os
 import sys
 import urlparse
@@ -82,6 +82,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(ROOT, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -112,10 +113,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'sgdj.urls'
+ROOT_URLCONF = 'sg.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'sgdj.wsgi.application'
+WSGI_APPLICATION = 'sg.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(ROOT, 'templates'),
