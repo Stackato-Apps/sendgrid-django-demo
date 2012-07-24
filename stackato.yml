@@ -8,21 +8,10 @@ framework:
 
 requirements:
   pypm:
-    - psycopg2
     - django
-    - south
 
 processes:
   web: $STACKATO_UWSGI
 
-services:
-  postgresql-sg: postgresql
-
-hooks:
-  post-staging:
-    - python manage.py syncdb --noinput
-    - python manage.py migrate
-
 ignores: 
   - .git
-  - dev.db
