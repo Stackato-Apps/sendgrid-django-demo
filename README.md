@@ -17,8 +17,13 @@ Run the server locally:
 
 ## Deploying to Stackato
 
-To push this application to Stackato, target the API endpoint (e.g.
-api.stacka.to) then run:
+To run this application on Stackato, target and authenticate with the
+API endpoint with the 'stackato' client. For example:
+
+    stackato target api.stacka.to
+    stackato login youremail@example.com 
+
+Then push the application to Stackato:
 
     stackato push -n
 
