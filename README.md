@@ -1,7 +1,7 @@
 # Sendgrid Django Demo 
 
-A Python Django application that email through SendGrid. You'll need a
-SendGrid account to use this, which you can get here:
+A Python Django application that sends email through SendGrid. You'll
+need a SendGrid account to use this, which you can get here:
 
  https://sendgrid.com/user/signup
 
