@@ -3,15 +3,5 @@ name: sendgrid-django-demo
 env:
   DJANGO_SETTINGS_MODULE: settings
 
-framework:
-  type: python
-
-requirements:
-  pypm:
-    - django
-
-processes:
-  web: $STACKATO_UWSGI
-
 ignores: 
   - .git
