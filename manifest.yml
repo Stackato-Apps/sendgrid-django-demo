@@ -1,0 +1,8 @@
+applications:
+- name: sendgrid-django-demo
+  stackato:
+    env:
+      DJANGO_SETTINGS_MODULE:
+        default: settings
+    ignores:
+    - .git

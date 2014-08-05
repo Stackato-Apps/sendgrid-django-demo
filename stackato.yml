@@ -1,7 +1,0 @@
-name: sendgrid-django-demo
-
-env:
-  DJANGO_SETTINGS_MODULE: settings
-
-ignores: 
-  - .git
