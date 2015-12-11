@@ -7,29 +7,14 @@ need a SendGrid account to use this, which you can get here:
 
 ## Local development
 
-Install Django using 'pip' or 'pypm':
+Install Django using 'pip':
 
-    pypm install django 
+    pip install django
 
 Run the server locally:
 
     python manage.py runserver
 
-## Deploying to Stackato
-
-To run this application on Stackato, target and authenticate with the
-API endpoint with the 'stackato' client. For example:
-
-    stackato target api.stacka.to
-    stackato login youremail@example.com 
-
-Then push the application to Stackato:
+## Deploying to HPE Helion Stackato
 
     stackato push -n
-
-## The longer version
-
-There's a blog post about using SendGrid with Stackato here:
-
- http://www.activestate.com/blog/2012/07/youve-got-mail-using-sendgrid-stackato 
-
