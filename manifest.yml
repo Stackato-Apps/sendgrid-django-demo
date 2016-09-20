@@ -1,9 +1,7 @@
 applications:
 - name: sendgrid-django-demo
+  buildpack: https://github.com/cloudfoundry/python-buildpack
+  env:
+    DJANGO_SETTINGS_MODULE: settings
   memory: 64M
-  stackato:
-    env:
-      DJANGO_SETTINGS_MODULE:
-        default: settings
-    ignores:
-    - .git
+  stack: cflinuxfs2
